@@ -1,0 +1,309 @@
+.header{
+  position: fixed;
+  top:$margin-sides;
+  right: $margin-sides;
+  width: 47px;
+  z-index: $z-header;
+
+
+  .header-wrapper{
+    width: 100%;
+    height: 100%;
+    transition:         fill $transition-medium ease;
+    -webkit-transition: fill $transition-medium ease;
+    -moz-transition:    fill $transition-medium ease;
+    -ms-transition:     fill $transition-medium ease;
+    -o-transition:      fill $transition-medium ease;
+    &:hover{
+      fill:  $black;
+      &:hover {
+        fill: $sand;
+        @include respond-to(phone-device) {
+          color: $black !important;
+        }
+        @include respond-to(tablet-portrait-device) {
+          color: $black !important;
+        }
+        @include respond-to(tablet-landscape-device) {
+          color: $black !important;
+        }
+
+
+      }
+    }
+    svg{
+      width: 100%;
+      height: 100%;
+      rect{
+        transition:         y $transition-medium ease;
+        -webkit-transition: y $transition-medium ease;
+        -moz-transition:    y $transition-medium ease;
+        -ms-transition:     y $transition-medium ease;
+        -o-transition:      y $transition-medium ease;
+      }
+    }
+  }
+}
+
+
+.upper-bar.navOpen{
+  y: 432;
+}
+.lower-bar.navOpen{
+  y: 432;
+}
+
+
+// 
+// .close-right.navOpen-remove.navOpen-remove-active{
+//   transition:         y $transition-medium ease;
+//   -webkit-transition: y $transition-medium ease;
+//   -moz-transition:    y $transition-medium ease;
+//   -ms-transition:     y $transition-medium ease;
+//   -o-transition:      y $transition-medium ease;
+// }
+//
+// .close-right.navOpen-add.navOpen-add-active{
+//   transition:         y $transition-medium ease;
+//   -webkit-transition: y $transition-medium ease;
+//   -moz-transition:    y $transition-medium ease;
+//   -ms-transition:     y $transition-medium ease;
+//   -o-transition:      y $transition-medium ease;
+// }
+//
+
+
+
+
+
+
+
+
+
+
+
+
+
+.nav{
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background-color: rgba(255, 255, 255, 0.9);
+  z-index: $z-nav;
+  top:0;
+  left: 0;
+}
+
+.nav-close{
+
+}
+
+.nav-table{
+  height: 100%;
+  width: 100%;
+  .nav-tr{
+    .nav-td{
+      vertical-align: middle;
+      height: 100%;
+      .nav-wrapper{
+        width: 600px;
+        height:auto;
+        display: block;
+        margin: auto;
+        .nav-ul{
+          width: 100%;
+          display: inline-block;
+          .nav-li{
+            width: 100%;
+            text-align: center;
+            a{
+              width: 100%;
+              text-align: center;
+              @include header('red',yes);
+
+            }
+          }
+        }
+
+        .nav-share{
+          width: 300px;
+          display: inline-block;
+          float: left;
+          .nav-share-li{
+            a{
+              @include header('black',yes);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+@keyframes close_slideLeft {
+  0% { @include transform-element(translateX(10vw)); }
+  100% { @include transform-element(translateX(0vw)); }
+}
+
+@-webkit-keyframes close_slideLeft {
+  0% { @include transform-element(translateX(10vw)); }
+  100% { @include transform-element(translateX(0vw)); }
+}
+
+@-moz-keyframes close_slideLeft {
+  0% { @include transform-element(translateX(10vw)); }
+  100% { @include transform-element(translateX(0vw)); }
+}
+
+@-ms-keyframes close_slideLeft {
+  0% { @include transform-element(translateX(10vw)); }
+  100% { @include transform-element(translateX(0vw)); }
+}
+
+@-o-keyframes close_slideLeft {
+  0% { @include transform-element(translateX(10vw)); }
+  100% { @include transform-element(translateX(0vw)); }
+}
+
+
+
+@keyframes close_slideRight {
+  0% { @include transform-element(translateX(0vw)); }
+  100% { @include transform-element(translateX(10vw)); }
+}
+
+@-webkit-keyframes close_slideRight {
+  0% { @include transform-element(translateX(0vw)); }
+  100% { @include transform-element(translateX(10vw)); }
+}
+
+@-moz-keyframes close_slideRight {
+  0% { @include transform-element(translateX(0vw)); }
+  100% { @include transform-element(translateX(10vw)); }
+}
+
+@-ms-keyframes close_slideRight {
+  0% { @include transform-element(translateX(0vw)); }
+  100% { @include transform-element(translateX(10vw)); }
+}
+
+@-o-keyframes close_slideRight {
+  0% { @include transform-element(translateX(0vw)); }
+  100% { @include transform-element(translateX(10vw)); }
+}
+
+
+
+
+$animation-bezier: ease-in;
+$animation-speed: 0.3s;
+
+.close-right{
+  position: fixed;
+  @include transform-element(translateX(0vw));
+}
+.close-right.ng-hide{
+  @include transform-element(translateX(10vw));
+}
+
+
+.close-right.ng-hide-remove.ng-hide-remove-active{
+  -webkit-animation: close_slideLeft $animation-speed $animation-bezier;
+  -moz-animation: close_slideLeft $animation-speed $animation-bezier;
+  -ms-animation: close_slideLeft $animation-speed $animation-bezier;
+  -o-animation: close_slideLeft $animation-speed $animation-bezier;
+  animation: close_slideLeft $animation-speed $animation-bezier;
+}
+
+.close-right.ng-hide-add.ng-hide-add-active{
+
+  -webkit-animation: close_slideRight $animation-speed $animation-bezier;
+  -moz-animation: close_slideRight $animation-speed $animation-bezier;
+  -ms-animation: close_slideRight $animation-speed $animation-bezier;
+  -o-animation: close_slideRight $animation-speed $animation-bezier;
+  animation: close_slideRight $animation-speed $animation-bezier;
+}
+
+
+
+
+
+
+
+
+//CLOSE LEFT
+
+
+.close-left{
+  position: fixed;
+  display: block;
+  left:-10vw;
+  top:0;
+  width:10vw;
+  height:100vh;
+  background-color: $red-rgba;
+  z-index: $z-close;
+
+
+  .close-left-x{
+      width: 70px;
+      height: 50px;
+      left: 50%;
+      top:50%;
+      position: absolute;
+      margin-top: -25px;
+      margin-left: -35px;
+      background-color: #FFFFFF;
+    svg{
+      width: 35px;
+      position: absolute;
+      height: 35px;
+      top: 50%;
+      left: 50%;
+      margin-left: -17.5px;
+      margin-top: -17.5px;
+      line{
+        stroke: $red;
+      }
+    }
+  }
+}
+
+
+$animation-bezier: ease-in;
+$animation-speed: 0.3s;
+
+.close-left{
+  position: fixed;
+  @include transform-element(translateX(10vw));
+}
+.close-left.ng-hide{
+  @include transform-element(translateX(0vw));
+}
+
+
+.close-left.ng-hide-remove.ng-hide-remove-active{
+  -webkit-animation: close_slideRight $animation-speed $animation-bezier;
+  -moz-animation: close_slideRight $animation-speed $animation-bezier;
+  -ms-animation: close_slideRight $animation-speed $animation-bezier;
+  -o-animation: close_slideRight $animation-speed $animation-bezier;
+  animation: close_slideRight $animation-speed $animation-bezier;
+}
+
+.close-left.ng-hide-add.ng-hide-add-active{
+
+
+  -webkit-animation: close_slideLeft $animation-speed $animation-bezier;
+  -moz-animation: close_slideLeft $animation-speed $animation-bezier;
+  -ms-animation: close_slideLeft $animation-speed $animation-bezier;
+  -o-animation: close_slideLeft $animation-speed $animation-bezier;
+  animation: close_slideLeft $animation-speed $animation-bezier;
+}

@@ -1,0 +1,22 @@
+<div class="product" summary="product" ng-controller="productCtrl">
+
+
+  <ul class="product-ul">
+    <li class="product-li" ng-repeat="p in Product" ng-click="thisProduct(p.uid)" ng-mouseenter="flip=true" ng-mouseleave="flip=false">
+      <a class="product-li-a" href="/product/{{p.uid}}">
+
+        <div class="product-li-cover">
+          <figure class="front" style="background-image: url('{{p.data['product.cover'].value.main.url}}')" ng-class="{'flipped': flip}"></figure>
+          <figure class="back" style="background-image: url('{{p.data['product.image'].value[1].image.value.main.url}}')" ng-class="{'flipped': flip}"></figure>
+        </div>
+
+
+        <p class="product-li-name">{{p.data['product.title'].value[0].text}}</p>
+
+      </a>
+    </li>
+  </ul>
+
+
+
+</div>

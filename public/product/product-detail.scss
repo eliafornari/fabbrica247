@@ -1,0 +1,28 @@
+
+.product-detail{
+
+}
+
+.product-detail-list{
+  width: 100vw;
+  height: 100vh;
+  .product-detail-ul{
+    display: table;
+    width: auto;
+    .product-detail-li{
+      height: auto;
+      width: 500px;
+      .product-detail-li-content{
+        .product-detail-li-img{
+          width:500px;
+          height: auto;
+
+        }
+        .product-detail-li-caption{
+          display: block;
+
+        }
+      }
+    }
+  }
+}

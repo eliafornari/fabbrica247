@@ -1,0 +1,21 @@
+<div class="product-detail" summary="product" ng-controller="productCtrl">
+
+
+
+<div class="product-detail-list">
+
+  <ul class="product-detail-ul">
+    <li class="product-detail-li" ng-repeat="d in detailImages">
+
+      <div class="product-detail-li-content">
+        <img class="product-detail-li-img" src="{{d.image.value.main.url}}" alt="" />
+        <p class="product-detail-li-caption">{{d.caption.value}}</p>
+      </div>
+
+
+    </li>
+  </ul>
+
+</div>
+
+</div>
